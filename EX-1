@@ -1,0 +1,75 @@
+import java.util.Scanner;
+class EB
+{  
+  string name,type;
+  int cno,prev,cur;
+     
+  void setInput()
+  {
+     Scanner s=new Scanner(System.in);
+     System.out.println("Customer Details:");
+     System.out.println("Enter Customer Name:");
+     cname=s.nextLine();
+     System.out.println("Enter connection type:");
+     ctype=s.nextLine();
+     System.out.println("Enter Customer number:");
+     cno=s.nextInt();
+     System.out.println("Enter previous readings:");
+     prev=s.nextInt();
+     System.out.println("Enter current readings:");
+     cur=s.nextInt();
+  }
+  void cal()
+  {
+    int amount=0;
+    int c=cur-prev;
+    if (ctype.equals("Domestic"))
+    {
+       int c=cur-prev;
+       int amount;
+
+       if (c<=100)
+           amount=0;
+       
+       else if (c>100 && c<=200)
+          amount=(c-100)*2;
+
+       else if(c>200 && c<=500)
+          amount=(c-200)*4+100*2;
+       
+       else
+           amount=(c-500)*6+300*4+100*2;
+  
+       System.out.println(amount);
+
+   }
+   else
+   {
+      int c=cur-prev;
+      int amount;
+
+      if (c<=100)
+          amount=(c-100)*2;
+       
+       else if (c>100 && c<=200)
+          amount=(c-200)*4+100*2;
+
+       else if(c>200 && c<=500)
+          amount=(c-500)*6+300*4+100*2;
+       
+       else
+           amount=(c-500)*7+300*6+100*4+100*2;
+  
+       System.out.println(amount);
+   }
+ 
+  }
+
+  public static void main(String[]args)
+  {
+    
+     EB b=new EB();
+     b.setInput();
+     b.cal();      
+  }
+}
