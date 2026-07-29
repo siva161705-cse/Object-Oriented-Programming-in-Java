@@ -1,0 +1,62 @@
+import java.util.*;
+interface Calculator
+{  
+  
+  void add(int n1,int n2);
+  void sub(int n1,int n2);
+  void mul(int n1,int n2);
+  void div(int n1,int n2);
+
+}
+
+class Operation implements Calculator
+{
+
+   public void add(int n1,int n2)
+   {
+
+    System.out.println("Addition:"+(n1+n2));
+   
+   }
+   
+   public void sub(int n1,int n2)
+   {
+
+     System.out.println("Subtraction:"+(n1-n2));
+   
+   }
+ 
+   public void mul(int n1,int n2)
+   {
+
+    System.out.println("Multiplication:"+(n1*n2));
+   
+   }
+
+   public void div(int n1,int n2)
+   {
+
+     System.out.println("Division:"+(n1/n2));
+   
+   }
+   
+}
+
+class EX5
+{
+
+   public static void main(String arg[])
+   {
+       Scanner s=new Scanner(System.in);  
+       Calculator o=new Operation();
+       System.out.println("Enter n1:"); 
+       int n1=s.nextInt();
+       System.out.println("Enter n2:");
+       int n2=s.nextInt();
+       System.out.println("\nArithmetic Operations");
+       o.add(n1,n2);
+       o.sub(n1,n2);
+       o.mul(n1,n2);
+       o.div(n1,n2);
+   }
+}
