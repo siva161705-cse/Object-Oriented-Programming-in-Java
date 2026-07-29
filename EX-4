@@ -1,0 +1,133 @@
+import java.util.*;
+class Employee
+{
+  
+   String ename,address,mailid;
+   int eid;
+   long mobile;
+   double bp,da,hra,pf,sc,gs,ns;
+   Scanner s=new Scanner(System.in);
+   void setInput()
+   {
+    
+     System.out.println("Enter name:");
+     ename=s.next();
+     System.out.println("Enter address:");
+     address=s.next();
+     System.out.println("Enter mailid:");
+     mailid=s.next();
+     System.out.println("Enter eid:");
+     eid=s.nextInt();
+     System.out.println("mobile no:");
+     mobile=s.nextLong();
+   }
+    void cal(double daPer,double hraPer,double pfPer,double scPer)
+
+    {
+    
+       da=bp*daPer/100.0;
+       hra=bp*hraPer/100;
+       pf=bp*pfPer/100.0;
+       sc=bp*scPer/100.0;
+       gs=bp+da+hra+pf+sc;
+       ns=gs-pf-sc;   
+    }
+   void display()
+   {
+
+     System.out.println("Name: "+ ename);
+     System.out.println("Emp id:"+ eid);
+     System.out.println("Mail id:"+mailid);
+     System.out.println("Address:"+address);
+     System.out.println("Mobile:"+mobile);
+    System.out.println("Basic Pay:"+bp);
+      System.out.println("DA:"+da);
+      System.out.println("HRA:"+hra);
+      System.out.println("PF:"+pf);
+      System.out.println("SC:"+sc);
+      System.out.println("GROSS SALARY:"+gs);
+      System.out.println("NET SALARY:"+ns);
+  }
+}
+class Programmer extends Employee
+{    
+   void setBasicPay()
+   {
+
+     Scanner s1=new Scanner(System.in);
+     System.out.println("Enter Basic Pay:");
+     bp=s1.nextDouble();
+   }
+  
+    
+}    
+
+class assistantProfessor extends Employee
+{    
+   void setBasicPay()
+   {
+
+     Scanner s1=new Scanner(System.in);
+     System.out.println("Enter Basic Pay:");
+     bp=s1.nextDouble();
+   }
+   
+}    
+
+
+class associateProfessor extends Employee
+{    
+   void setBasicPay()
+   {
+
+     Scanner s1=new Scanner(System.in);
+     System.out.println("Enter Basic Pay:");
+     bp=s1.nextDouble();
+   }
+   
+  
+}    
+
+class Professor extends Employee
+{    
+   void setBasicPay()
+   {
+
+     Scanner s1=new Scanner(System.in);
+     System.out.println("Enter Basic Pay:");
+     bp=s1.nextDouble();
+   }
+    
+   
+} 
+class EX3
+{
+    public static void main(String[]args) 
+    {
+
+       Programmer p=new Programmer();
+       p.setInput();
+       p.setBasicPay();
+       p.cal(97,10,12,1);
+       p.display(); 
+   
+       assistantProfessor ap=new assistantProfessor();
+       ap.setInput();
+       ap.setBasicPay();
+       ap.cal(110,20,12,5);
+       ap.display(); 
+      
+       associateProfessor asp=new associateProfessor();
+       asp.setInput();
+       asp.setBasicPay();
+       asp.cal(130,30,12,10);
+       asp.display(); 
+      
+       Professor pr=new Professor();
+       pr.setInput();
+       pr.setBasicPay();
+       pr.cal(140,40,12,15);
+       pr.display(); 
+   
+    }
+}
